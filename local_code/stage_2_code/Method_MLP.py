@@ -15,9 +15,13 @@ import numpy as np
 class Method_MLP(method, nn.Module):
     data = None
     # it defines the max rounds to train the model
-    max_epoch = 500
+    max_epoch = 50
     # it defines the learning rate for gradient descent based optimizer for model learning
     learning_rate = 1e-3
+    
+    # training metrics tracking
+    train_losses = []
+    train_accuracies = []
 
     # it defines the the MLP model architecture, e.g.,
     # how many layers, size of variables in each layer, activation function, etc.
@@ -62,6 +66,10 @@ class Method_MLP(method, nn.Module):
         # for training accuracy investigation purpose
         accuracy_evaluator = Evaluate_Accuracy('training evaluator', '')
 
+        # clear previous metrics
+        self.train_losses = []
+        self.train_accuracies = []
+
         # it will be an iterative gradient updating process
         # we don't do mini-batch, we use the whole input as one batch
         # you can try to split X and y into smaller-sized batches by yourself
@@ -82,9 +90,17 @@ class Method_MLP(method, nn.Module):
             # update the variables according to the optimizer and the gradients calculated by the above loss.backward function
             optimizer.step()
 
-            if epoch%100 == 0:
+            # calculate and store metrics for this epoch
+            print_interval = 25 if self.max_epoch <= 100 else 100
+            if epoch % print_interval == 0 or epoch == self.max_epoch - 1:
                 accuracy_evaluator.data = {'true_y': y_true, 'pred_y': y_pred.max(1)[1]}
-                print('Epoch:', epoch, 'Accuracy:', accuracy_evaluator.evaluate(), 'Loss:', train_loss.item())
+                epoch_accuracy = accuracy_evaluator.evaluate()
+                progress_pct = (epoch + 1) / self.max_epoch * 100
+                print(f'Epoch: {epoch}/{self.max_epoch} ({progress_pct:.1f}%), Accuracy: {epoch_accuracy:.4f}, Loss: {train_loss.item():.4f}')
+            
+            self.train_losses.append(train_loss.item())
+            self.train_accuracies.append(epoch_accuracy)
+
     
     def test(self, X):
         # do the testing, and result the result

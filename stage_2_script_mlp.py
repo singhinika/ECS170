@@ -3,6 +3,7 @@ from local_code.stage_2_code.Method_MLP import Method_MLP
 from local_code.stage_2_code.Result_Saver import Result_Saver
 from local_code.stage_2_code.Evaluate_Accuracy import Evaluate_Accuracy
 from local_code.stage_2_code.Evaluate_Multiclass import Evaluate_Multiclass
+from local_code.stage_2_code.plot_utils import plot_convergence_curves, plot_loss_convergence_detailed, print_training_summary
 
 import numpy as np
 import torch
@@ -57,6 +58,27 @@ if __name__ == "__main__":
     multiclass_eval_obj.data = learned_result
     multiclass_eval_obj.print_summary()
     multiclass_eval_obj.print_detailed_report()
+
+    # Generate convergence curves
+    print("************ Generating Convergence Curves ************")
+    plot_dir = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/ECS170_Spring_2026_Source_Code_Template/result/stage_2_result/MLP"
+    plot_convergence_curves(
+        method_obj.train_losses, 
+        method_obj.train_accuracies, 
+        save_dir=plot_dir, 
+        model_name="MLP_Baseline"
+    )
+    
+    # Generate detailed loss convergence plot
+    print("************ Generating Detailed Loss Convergence Plot ************")
+    plot_loss_convergence_detailed(
+        method_obj.train_losses, 
+        save_dir=plot_dir, 
+        model_name="MLP_Baseline"
+    )
+    
+    # Print training summary
+    print_training_summary(method_obj.train_losses, method_obj.train_accuracies, "MLP_Baseline")
 
     print("************ Overall Performance ************")
     print("MLP Accuracy: " + str(accuracy_score))
