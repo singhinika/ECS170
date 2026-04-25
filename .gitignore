@@ -150,10 +150,7 @@ Thumbs.db
 *.pickle
 
 
-# Data files 
-data/
-*.csv
-*.txt
+
 
 # Model files
 *.pt
