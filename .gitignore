@@ -151,9 +151,9 @@ Thumbs.db
 
 
 # Data files 
-# data/
-# *.csv
-# *.txt
+data/
+*.csv
+*.txt
 
 # Model files
 *.pt
