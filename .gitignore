@@ -148,7 +148,6 @@ Thumbs.db
 results/
 *.pkl
 *.pickle
-result/
 stage_*_result/
 
 # Data files (optional - comment out if you want to track data)

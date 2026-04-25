@@ -17,11 +17,11 @@ if __name__ == "__main__":
 
     # ---- object initialization section ---------------
     training_data_obj = Dataset_Loader("training_data", "stage 2 training set")
-    training_data_obj.dataset_source_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/stage_2_data/"
+    training_data_obj.dataset_source_folder_path = "./data/stage_2_data/"
     training_data_obj.dataset_source_file_name = "train.csv"
 
     testing_data_obj = Dataset_Loader("testing_data", "stage 2 test set")
-    testing_data_obj.dataset_source_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/stage_2_data/"
+    testing_data_obj.dataset_source_folder_path = "./data/stage_2_data/"
     testing_data_obj.dataset_source_file_name = "test.csv"
 
     training_data = training_data_obj.load()
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     }
 
     result_obj = Result_Saver("saver", "")
-    result_obj.result_destination_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/ECS170_Spring_2026_Source_Code_Template/result/stage_2_result/MLP"
+    result_obj.result_destination_folder_path = "./result/stage_2_result/MLP"
     result_obj.result_destination_file_name = "prediction_result"
 
     evaluate_obj = Evaluate_Accuracy("accuracy", "")
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     # Generate convergence curves
     print("************ Generating Convergence Curves ************")
-    plot_dir = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/ECS170_Spring_2026_Source_Code_Template/result/stage_2_result/MLP"
+    plot_dir = "./result/stage_2_result/MLP"
     plot_convergence_curves(
         method_obj.train_losses, 
         method_obj.train_accuracies, 

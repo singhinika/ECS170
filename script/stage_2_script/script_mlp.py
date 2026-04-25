@@ -3,6 +3,7 @@ from local_code.stage_2_code.Method_MLP import Method_MLP
 from local_code.stage_2_code.Result_Saver import Result_Saver
 from local_code.stage_2_code.Evaluate_Accuracy import Evaluate_Accuracy
 from local_code.stage_2_code.Evaluate_Multiclass import Evaluate_Multiclass
+from local_code.stage_2_code.plot_utils import plot_convergence_curves, plot_loss_convergence_detailed, print_training_summary
 
 import numpy as np
 import torch
@@ -16,11 +17,11 @@ if __name__ == "__main__":
 
     # ---- object initialization section ---------------
     training_data_obj = Dataset_Loader("training_data", "stage 2 training set")
-    training_data_obj.dataset_source_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/stage_2_data/"
+    training_data_obj.dataset_source_folder_path = "./data/stage_2_data/"
     training_data_obj.dataset_source_file_name = "train.csv"
 
     testing_data_obj = Dataset_Loader("testing_data", "stage 2 test set")
-    testing_data_obj.dataset_source_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/stage_2_data/"
+    testing_data_obj.dataset_source_folder_path = "./data/stage_2_data/"
     testing_data_obj.dataset_source_file_name = "test.csv"
 
     training_data = training_data_obj.load()
@@ -33,7 +34,7 @@ if __name__ == "__main__":
     }
 
     result_obj = Result_Saver("saver", "")
-    result_obj.result_destination_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/ECS170_Spring_2026_Source_Code_Template/result/stage_2_result/MLP"
+    result_obj.result_destination_folder_path = "./result/stage_2_result/MLP"
     result_obj.result_destination_file_name = "prediction_result"
 
     evaluate_obj = Evaluate_Accuracy("accuracy", "")
@@ -57,6 +58,27 @@ if __name__ == "__main__":
     multiclass_eval_obj.data = learned_result
     multiclass_eval_obj.print_summary()
     multiclass_eval_obj.print_detailed_report()
+
+    # Generate convergence curves
+    print("************ Generating Convergence Curves ************")
+    plot_dir = "./result/stage_2_result/MLP"
+    plot_convergence_curves(
+        method_obj.train_losses, 
+        method_obj.train_accuracies, 
+        save_dir=plot_dir, 
+        model_name="MLP_Baseline"
+    )
+    
+    # Generate detailed loss convergence plot
+    print("************ Generating Detailed Loss Convergence Plot ************")
+    plot_loss_convergence_detailed(
+        method_obj.train_losses, 
+        save_dir=plot_dir, 
+        model_name="MLP_Baseline"
+    )
+    
+    # Print training summary
+    print_training_summary(method_obj.train_losses, method_obj.train_accuracies, "MLP_Baseline")
 
     print("************ Overall Performance ************")
     print("MLP Accuracy: " + str(accuracy_score))

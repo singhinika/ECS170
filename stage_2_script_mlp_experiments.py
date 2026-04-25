@@ -26,11 +26,11 @@ if __name__ == "__main__":
 
     # ---- object initialization section ---------------
     training_data_obj = Dataset_Loader("training_data", "stage 2 training set")
-    training_data_obj.dataset_source_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/stage_2_data/"
+    training_data_obj.dataset_source_folder_path = "./data/stage_2_data/"
     training_data_obj.dataset_source_file_name = "train.csv"
 
     testing_data_obj = Dataset_Loader("testing_data", "stage 2 test set")
-    testing_data_obj.dataset_source_folder_path = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/stage_2_data/"
+    testing_data_obj.dataset_source_folder_path = "./data/stage_2_data/"
     testing_data_obj.dataset_source_file_name = "test.csv"
 
     training_data = training_data_obj.load()
@@ -172,7 +172,7 @@ if __name__ == "__main__":
         multiclass_eval_obj.print_summary()
         
         # Save plots
-        plot_dir = f"/Users/inikasingh/Downloads/davis spring 26/ecs 170/ECS170_Spring_2026_Source_Code_Template/result/stage_2_result/MLP_Experiments"
+        plot_dir = f"./result/stage_2_result/MLP_Experiments"
         
         plot_convergence_curves(
             method_obj.train_losses, 
@@ -198,7 +198,7 @@ if __name__ == "__main__":
     print("GENERATING COMPARISON PLOTS")
     print("="*60)
     
-    plot_dir = "/Users/inikasingh/Downloads/davis spring 26/ecs 170/ECS170_Spring_2026_Source_Code_Template/result/stage_2_result/MLP_Experiments"
+    plot_dir = "./result/stage_2_result/MLP_Experiments"
     plot_multiple_models_comparison(models_data, save_dir=plot_dir)
 
     # Final comparison summary
