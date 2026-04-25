@@ -145,12 +145,12 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific files
-results/
+
 *.pkl
 *.pickle
-stage_*_result/
 
-# Data files (optional - comment out if you want to track data)
+
+# Data files 
 # data/
 # *.csv
 # *.txt
