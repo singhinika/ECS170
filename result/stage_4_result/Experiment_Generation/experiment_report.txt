@@ -1,0 +1,270 @@
+Experiment Report: RNN vs. LSTM vs. GRU Text Generation
+=================================================================
+
+Hyperparameter summary:
+  RNN: cell=RNN, embed=128, hidden=256, epochs=50, lr=0.001, dropout=0.3, temp=0.8, top_k=10
+  LSTM: cell=LSTM, embed=256, hidden=512, epochs=80, lr=0.0005, dropout=0.4, temp=0.7, top_k=15
+  GRU: cell=GRU, embed=256, hidden=512, epochs=75, lr=0.0005, dropout=0.35, temp=0.75, top_k=12
+
+Training results:
+  RNN: init_loss=7.6173, final_loss=1.9799, reduction=74.0%, time=30s
+  LSTM: init_loss=7.8582, final_loss=2.0183, reduction=74.3%, time=98s
+  GRU: init_loss=7.7552, final_loss=1.0079, reduction=87.0%, time=114s
+
+Generated jokes (7 shared seeds):
+
+Seed: "what did the"
+  Original : what did the bartender say to the jumper cables ? you better not try to start anything .
+  RNN      : what did the barber to get out the tangles? a brick
+  LSTM     : what did the zero say to the purple grape? i said, i'm only a one of funding.
+  GRU      : what did the musician say to the barber? you ca lip this?
+
+Seed: "don't you hate"
+  Original : don't you hate jokes about german sausage ? they're the wurst !
+  RNN      : don't you hate fires turns the man get when the mayor presented the because you was the little league? i'll be bach
+  LSTM     : don't you hate 2 who about the movie of tea? it's just bad of my 9.
+  GRU      : don't you hate problem with mexican, flowers, and have you know for jokes?
+
+Seed: "two artists had"
+  Original : two artists had an art contest . . . it ended in a draw
+  RNN      : two artists had an legs? lean beef, i just know i made this one i said, i'm no out!!!
+  LSTM     : two artists had an an contest... there ended? a brain
+  GRU      : two artists had a dispute.... but it ended in a draw
+
+Seed: "why did the"
+  Original : why did the chicken cross the playground ? to get to the other slide .
+  RNN      : why did the delivery name? because he was outstanding in the field
+  LSTM     : why did the chicken cross the road? to get to the other slide
+  GRU      : why did the dog go up his life? he wanted to be checked! this one way! skip
+
+Seed: "what do you"
+  Original : what do you call a car that eats other cars ? a carnivore .
+  RNN      : what do you have a cow with a cartridge? a buccaneer.
+  LSTM     : what do you call a blind psychic with no legs? a stick
+  GRU      : what do you when you drop a hairy in a diving bell? a firequacker.
+
+Seed: "why does a"
+  Original : why does a milking stool have only three legs ? because the cow has the udder !
+  RNN      : why does a man in the bathroom that? a communist propaganda film why i know it would get to the same.
+  LSTM     : why does a only need to be his deal of a light? because. i'm called for the pool.
+  GRU      : why does a forth need to have? a cow is a little shellfish.
+
+Seed: "how do you"
+  Original : how do you prepare for a party in space ? you planet thanks u bostoncentrist
+  RNN      : how do you if it lost a tree? it had a cold, but what did the bee say to the other? because he was absolutely ribbeting!
+  LSTM     : how do you get down in the best legs? they on a hole in my www. but. i think myself out up it was up.
+  GRU      : how do you an elephant on an italian? hitler
+
+
+Full loss history per model:
+
+RNN:
+  Epoch  1: 7.6173
+  Epoch  2: 6.2000
+  Epoch  3: 5.9789
+  Epoch  4: 5.8141
+  Epoch  5: 5.6654
+  Epoch  6: 5.5202
+  Epoch  7: 5.3757
+  Epoch  8: 5.2296
+  Epoch  9: 5.1034
+  Epoch 10: 4.9760
+  Epoch 11: 4.8613
+  Epoch 12: 4.7449
+  Epoch 13: 4.6407
+  Epoch 14: 4.5332
+  Epoch 15: 4.4372
+  Epoch 16: 4.3271
+  Epoch 17: 4.2347
+  Epoch 18: 4.1434
+  Epoch 19: 4.0448
+  Epoch 20: 3.9516
+  Epoch 21: 3.8700
+  Epoch 22: 3.7754
+  Epoch 23: 3.6994
+  Epoch 24: 3.6117
+  Epoch 25: 3.5165
+  Epoch 26: 3.4433
+  Epoch 27: 3.3628
+  Epoch 28: 3.2874
+  Epoch 29: 3.2059
+  Epoch 30: 3.1270
+  Epoch 31: 3.0508
+  Epoch 32: 2.9829
+  Epoch 33: 2.9102
+  Epoch 34: 2.8431
+  Epoch 35: 2.7769
+  Epoch 36: 2.7073
+  Epoch 37: 2.6621
+  Epoch 38: 2.5913
+  Epoch 39: 2.5232
+  Epoch 40: 2.4696
+  Epoch 41: 2.4062
+  Epoch 42: 2.3473
+  Epoch 43: 2.3033
+  Epoch 44: 2.2539
+  Epoch 45: 2.2023
+  Epoch 46: 2.1430
+  Epoch 47: 2.0949
+  Epoch 48: 2.0569
+  Epoch 49: 2.0116
+  Epoch 50: 1.9799
+
+LSTM:
+  Epoch  1: 7.8582
+  Epoch  2: 6.4523
+  Epoch  3: 6.2280
+  Epoch  4: 6.0744
+  Epoch  5: 5.9392
+  Epoch  6: 5.8300
+  Epoch  7: 5.7345
+  Epoch  8: 5.6461
+  Epoch  9: 5.5608
+  Epoch 10: 5.4764
+  Epoch 11: 5.3931
+  Epoch 12: 5.3108
+  Epoch 13: 5.2263
+  Epoch 14: 5.1469
+  Epoch 15: 5.0709
+  Epoch 16: 5.0012
+  Epoch 17: 4.9243
+  Epoch 18: 4.8569
+  Epoch 19: 4.7858
+  Epoch 20: 4.7145
+  Epoch 21: 4.6523
+  Epoch 22: 4.5905
+  Epoch 23: 4.5292
+  Epoch 24: 4.4671
+  Epoch 25: 4.4068
+  Epoch 26: 4.3418
+  Epoch 27: 4.2829
+  Epoch 28: 4.2239
+  Epoch 29: 4.1749
+  Epoch 30: 4.1161
+  Epoch 31: 4.0623
+  Epoch 32: 3.9945
+  Epoch 33: 3.9465
+  Epoch 34: 3.8940
+  Epoch 35: 3.8420
+  Epoch 36: 3.7913
+  Epoch 37: 3.7438
+  Epoch 38: 3.6901
+  Epoch 39: 3.6380
+  Epoch 40: 3.5889
+  Epoch 41: 3.5352
+  Epoch 42: 3.4831
+  Epoch 43: 3.4408
+  Epoch 44: 3.4001
+  Epoch 45: 3.3478
+  Epoch 46: 3.2959
+  Epoch 47: 3.2498
+  Epoch 48: 3.2054
+  Epoch 49: 3.1596
+  Epoch 50: 3.1163
+  Epoch 51: 3.0748
+  Epoch 52: 3.0265
+  Epoch 53: 2.9795
+  Epoch 54: 2.9411
+  Epoch 55: 2.9061
+  Epoch 56: 2.8666
+  Epoch 57: 2.8235
+  Epoch 58: 2.7806
+  Epoch 59: 2.7430
+  Epoch 60: 2.7031
+  Epoch 61: 2.6618
+  Epoch 62: 2.6240
+  Epoch 63: 2.5917
+  Epoch 64: 2.5583
+  Epoch 65: 2.5212
+  Epoch 66: 2.4845
+  Epoch 67: 2.4385
+  Epoch 68: 2.4043
+  Epoch 69: 2.3722
+  Epoch 70: 2.3339
+  Epoch 71: 2.3016
+  Epoch 72: 2.2702
+  Epoch 73: 2.2461
+  Epoch 74: 2.2095
+  Epoch 75: 2.1780
+  Epoch 76: 2.1364
+  Epoch 77: 2.1046
+  Epoch 78: 2.0747
+  Epoch 79: 2.0508
+  Epoch 80: 2.0183
+
+GRU:
+  Epoch  1: 7.7552
+  Epoch  2: 6.3444
+  Epoch  3: 6.0830
+  Epoch  4: 5.9007
+  Epoch  5: 5.7614
+  Epoch  6: 5.6372
+  Epoch  7: 5.5175
+  Epoch  8: 5.3917
+  Epoch  9: 5.2676
+  Epoch 10: 5.1563
+  Epoch 11: 5.0415
+  Epoch 12: 4.9348
+  Epoch 13: 4.8325
+  Epoch 14: 4.7305
+  Epoch 15: 4.6346
+  Epoch 16: 4.5381
+  Epoch 17: 4.4456
+  Epoch 18: 4.3565
+  Epoch 19: 4.2699
+  Epoch 20: 4.1828
+  Epoch 21: 4.0981
+  Epoch 22: 4.0087
+  Epoch 23: 3.9252
+  Epoch 24: 3.8385
+  Epoch 25: 3.7574
+  Epoch 26: 3.6835
+  Epoch 27: 3.6008
+  Epoch 28: 3.5146
+  Epoch 29: 3.4310
+  Epoch 30: 3.3553
+  Epoch 31: 3.2743
+  Epoch 32: 3.1961
+  Epoch 33: 3.1181
+  Epoch 34: 3.0363
+  Epoch 35: 2.9607
+  Epoch 36: 2.8864
+  Epoch 37: 2.8121
+  Epoch 38: 2.7430
+  Epoch 39: 2.6662
+  Epoch 40: 2.5993
+  Epoch 41: 2.5275
+  Epoch 42: 2.4582
+  Epoch 43: 2.3944
+  Epoch 44: 2.3281
+  Epoch 45: 2.2636
+  Epoch 46: 2.1942
+  Epoch 47: 2.1390
+  Epoch 48: 2.0704
+  Epoch 49: 2.0200
+  Epoch 50: 1.9675
+  Epoch 51: 1.9158
+  Epoch 52: 1.8610
+  Epoch 53: 1.8057
+  Epoch 54: 1.7568
+  Epoch 55: 1.7097
+  Epoch 56: 1.6583
+  Epoch 57: 1.6156
+  Epoch 58: 1.5743
+  Epoch 59: 1.5349
+  Epoch 60: 1.4843
+  Epoch 61: 1.4492
+  Epoch 62: 1.4073
+  Epoch 63: 1.3728
+  Epoch 64: 1.3327
+  Epoch 65: 1.3017
+  Epoch 66: 1.2630
+  Epoch 67: 1.2333
+  Epoch 68: 1.2011
+  Epoch 69: 1.1724
+  Epoch 70: 1.1425
+  Epoch 71: 1.1131
+  Epoch 72: 1.0884
+  Epoch 73: 1.0571
+  Epoch 74: 1.0259
+  Epoch 75: 1.0079

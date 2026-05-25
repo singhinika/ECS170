@@ -7,6 +7,9 @@ __pycache__/
 CIFAR
 MNIST
 ORL
+text_classification/
+text_generation/
+stage_4_data
 
 # C extensions
 *.so

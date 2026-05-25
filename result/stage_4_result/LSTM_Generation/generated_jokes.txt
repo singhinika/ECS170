@@ -1,0 +1,123 @@
+LSTM Text Generation Results
+Model: 2-layer LSTM  |  embed=256  |  hidden=512  |  Epochs: 80  |  Final Loss: 1.7912
+
+Architecture changes vs. base RNN:
+  cell_type=LSTM   : gated memory prevents vanishing gradients over long sequences
+  embed_dim=256    : richer word representations for puns/wordplay
+  hidden_dim=512   : more capacity to model joke structure
+  max_epoch=80     : more training for the larger model
+  learning_rate=5e-4: stable convergence with more parameters
+  dropout=0.4      : prevents memorising individual jokes
+  temperature=0.7  : sharper distribution for more coherent outputs
+  top_k=15         : slightly wider candidate vocabulary
+
+[1] Seed : "what did the"
+    Generated : what did the electrician say to his son? when he wanted for her prints.
+    Original  : what did the bartender say to the jumper cables ? you better not try to start anything .
+
+[2] Seed : "don't you hate"
+    Generated : don't you hate clean joke? why are snakes on a while.
+    Original  : don't you hate jokes about german sausage ? they're the wurst !
+
+[3] Seed : "two artists had"
+    Generated : two artists had a bit...... so not good in this morning and my head and told me that i think my brain, i can not up with my street.
+    Original  : two artists had an art contest . . . it ended in a draw
+
+[4] Seed : "why did the"
+    Generated : why did the tomato use at his armies? to get out of the donut!
+    Original  : why did the chicken cross the playground ? to get to the other slide .
+
+[5] Seed : "what do you"
+    Generated : what do you call a pile of combi's? a stick
+    Original  : what do you call a car that eats other cars ? a carnivore .
+
+[6] Seed : "why does a"
+    Generated : why does a chicken need to only to umbrella in breakfast? to get around!
+    Original  : why does a milking stool have only three legs ? because the cow has the udder !
+
+[7] Seed : "how do you"
+    Generated : how do you count into a party? you cross an itheburg.
+    Original  : how do you prepare for a party in space ? you planet thanks u bostoncentrist
+
+
+Training Loss per Epoch:
+  Epoch  1: 7.9039
+  Epoch  2: 6.4566
+  Epoch  3: 6.2132
+  Epoch  4: 6.0525
+  Epoch  5: 5.9094
+  Epoch  6: 5.7906
+  Epoch  7: 5.6881
+  Epoch  8: 5.5984
+  Epoch  9: 5.5051
+  Epoch 10: 5.4127
+  Epoch 11: 5.3299
+  Epoch 12: 5.2419
+  Epoch 13: 5.1602
+  Epoch 14: 5.0765
+  Epoch 15: 5.0017
+  Epoch 16: 4.9230
+  Epoch 17: 4.8480
+  Epoch 18: 4.7682
+  Epoch 19: 4.7000
+  Epoch 20: 4.6307
+  Epoch 21: 4.5584
+  Epoch 22: 4.4941
+  Epoch 23: 4.4203
+  Epoch 24: 4.3647
+  Epoch 25: 4.2969
+  Epoch 26: 4.2308
+  Epoch 27: 4.1675
+  Epoch 28: 4.1055
+  Epoch 29: 4.0387
+  Epoch 30: 3.9771
+  Epoch 31: 3.9155
+  Epoch 32: 3.8556
+  Epoch 33: 3.7949
+  Epoch 34: 3.7473
+  Epoch 35: 3.6858
+  Epoch 36: 3.6235
+  Epoch 37: 3.5713
+  Epoch 38: 3.5085
+  Epoch 39: 3.4543
+  Epoch 40: 3.4060
+  Epoch 41: 3.3506
+  Epoch 42: 3.3000
+  Epoch 43: 3.2519
+  Epoch 44: 3.1961
+  Epoch 45: 3.1411
+  Epoch 46: 3.0930
+  Epoch 47: 3.0484
+  Epoch 48: 3.0053
+  Epoch 49: 2.9548
+  Epoch 50: 2.9091
+  Epoch 51: 2.8630
+  Epoch 52: 2.8172
+  Epoch 53: 2.7733
+  Epoch 54: 2.7248
+  Epoch 55: 2.6886
+  Epoch 56: 2.6429
+  Epoch 57: 2.6051
+  Epoch 58: 2.5603
+  Epoch 59: 2.5273
+  Epoch 60: 2.4894
+  Epoch 61: 2.4432
+  Epoch 62: 2.4010
+  Epoch 63: 2.3555
+  Epoch 64: 2.3181
+  Epoch 65: 2.2770
+  Epoch 66: 2.2449
+  Epoch 67: 2.2128
+  Epoch 68: 2.1880
+  Epoch 69: 2.1443
+  Epoch 70: 2.1098
+  Epoch 71: 2.0778
+  Epoch 72: 2.0367
+  Epoch 73: 2.0102
+  Epoch 74: 1.9787
+  Epoch 75: 1.9425
+  Epoch 76: 1.9116
+  Epoch 77: 1.8841
+  Epoch 78: 1.8490
+  Epoch 79: 1.8243
+  Epoch 80: 1.7912

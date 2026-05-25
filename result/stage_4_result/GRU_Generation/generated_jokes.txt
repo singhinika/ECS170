@@ -1,0 +1,118 @@
+GRU Text Generation Results
+Model: 2-layer GRU  |  embed=256  |  hidden=512  |  Epochs: 75  |  Final Loss: 0.9586
+
+Architecture changes vs. base RNN:
+  cell_type=GRU    : reset+update gates solve vanishing gradients with fewer params than LSTM
+  embed_dim=256    : richer word representations for puns/wordplay
+  hidden_dim=512   : more capacity to model joke structure
+  max_epoch=75     : faster convergence than LSTM due to fewer parameters
+  learning_rate=5e-4: stable convergence with more parameters
+  dropout=0.35     : moderate regularisation (less than LSTM, more than RNN)
+  temperature=0.75 : slightly sharper distribution than base RNN
+  top_k=12         : modest candidate expansion from RNN baseline
+
+[1] Seed : "what did the"
+    Generated : what did the electrician say to the hotdog vendor? make me one with everything.
+    Original  : what did the bartender say to the jumper cables ? you better not try to start anything .
+
+[2] Seed : "don't you hate"
+    Generated : don't you hate in space sausage? there's a dog in them, man, one from my 9.
+    Original  : don't you hate jokes about german sausage ? they're the wurst !
+
+[3] Seed : "two artists had"
+    Generated : two artists had a race... one cost to the other, look out of the cactussssssssssssssssssss!
+    Original  : two artists had an art contest . . . it ended in a draw
+
+[4] Seed : "why did the"
+    Generated : why did the chicken cross the playground? to get to the other slide
+    Original  : why did the chicken cross the playground ? to get to the other slide .
+
+[5] Seed : "what do you"
+    Generated : what do you call a fish with no wings? a.
+    Original  : what do you call a car that eats other cars ? a carnivore .
+
+[6] Seed : "why does a"
+    Generated : why does a pair of music? she had a pair of one's.
+    Original  : why does a milking stool have only three legs ? because the cow has the udder !
+
+[7] Seed : "how do you"
+    Generated : how do you buy an elephant in your thanksgiving? you stab it!
+    Original  : how do you prepare for a party in space ? you planet thanks u bostoncentrist
+
+
+Training Loss per Epoch:
+  Epoch  1: 7.7066
+  Epoch  2: 6.3324
+  Epoch  3: 6.1050
+  Epoch  4: 5.9357
+  Epoch  5: 5.7930
+  Epoch  6: 5.6639
+  Epoch  7: 5.5444
+  Epoch  8: 5.4135
+  Epoch  9: 5.2902
+  Epoch 10: 5.1765
+  Epoch 11: 5.0619
+  Epoch 12: 4.9504
+  Epoch 13: 4.8332
+  Epoch 14: 4.7374
+  Epoch 15: 4.6325
+  Epoch 16: 4.5379
+  Epoch 17: 4.4420
+  Epoch 18: 4.3507
+  Epoch 19: 4.2540
+  Epoch 20: 4.1662
+  Epoch 21: 4.0750
+  Epoch 22: 3.9806
+  Epoch 23: 3.9006
+  Epoch 24: 3.8008
+  Epoch 25: 3.7184
+  Epoch 26: 3.6301
+  Epoch 27: 3.5460
+  Epoch 28: 3.4618
+  Epoch 29: 3.3705
+  Epoch 30: 3.2901
+  Epoch 31: 3.2012
+  Epoch 32: 3.1275
+  Epoch 33: 3.0436
+  Epoch 34: 2.9701
+  Epoch 35: 2.8856
+  Epoch 36: 2.8163
+  Epoch 37: 2.7307
+  Epoch 38: 2.6561
+  Epoch 39: 2.5797
+  Epoch 40: 2.5136
+  Epoch 41: 2.4365
+  Epoch 42: 2.3707
+  Epoch 43: 2.3043
+  Epoch 44: 2.2326
+  Epoch 45: 2.1689
+  Epoch 46: 2.1091
+  Epoch 47: 2.0516
+  Epoch 48: 1.9978
+  Epoch 49: 1.9362
+  Epoch 50: 1.8765
+  Epoch 51: 1.8295
+  Epoch 52: 1.7722
+  Epoch 53: 1.7205
+  Epoch 54: 1.6757
+  Epoch 55: 1.6228
+  Epoch 56: 1.5751
+  Epoch 57: 1.5403
+  Epoch 58: 1.4931
+  Epoch 59: 1.4543
+  Epoch 60: 1.4152
+  Epoch 61: 1.3786
+  Epoch 62: 1.3395
+  Epoch 63: 1.2996
+  Epoch 64: 1.2683
+  Epoch 65: 1.2301
+  Epoch 66: 1.2011
+  Epoch 67: 1.1737
+  Epoch 68: 1.1396
+  Epoch 69: 1.1134
+  Epoch 70: 1.0843
+  Epoch 71: 1.0563
+  Epoch 72: 1.0248
+  Epoch 73: 1.0071
+  Epoch 74: 0.9776
+  Epoch 75: 0.9586

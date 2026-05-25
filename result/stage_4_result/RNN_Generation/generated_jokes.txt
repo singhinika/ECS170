@@ -1,0 +1,83 @@
+RNN Text Generation Results
+Model: 2-layer RNN  |  Epochs: 50  |  Final Loss: 1.9799
+
+[1] Seed : "what did the"
+    Generated : what did the book say when it hit the wall? dam
+    Original  : what did the bartender say to the jumper cables ? you better not try to start anything .
+
+[2] Seed : "don't you hate"
+    Generated : don't you hate about the space? because the p is silent
+    Original  : don't you hate jokes about german sausage ? they're the wurst !
+
+[3] Seed : "two artists had"
+    Generated : two artists had a tree? a baseball.
+    Original  : two artists had an art contest . . . it ended in a draw
+
+[4] Seed : "why did the"
+    Generated : why did the delivery guy to the bathroom? the bear and says, i don't know, i am are have!
+    Original  : why did the chicken cross the playground ? to get to the other slide .
+
+[5] Seed : "what do you"
+    Generated : what do you if you put a hole in a vest? an investigator
+    Original  : what do you call a car that eats other cars ? a carnivore .
+
+[6] Seed : "why does a"
+    Generated : why does a rabbit is an elephant? an indian and hose it was too cheesy.
+    Original  : why does a milking stool have only three legs ? because the cow has the udder !
+
+[7] Seed : "how do you"
+    Generated : how do you if you put a right joke about a close candy? radio every but i think.
+    Original  : how do you prepare for a party in space ? you planet thanks u bostoncentrist
+
+
+Training Loss per Epoch:
+  Epoch  1: 7.6173
+  Epoch  2: 6.2000
+  Epoch  3: 5.9789
+  Epoch  4: 5.8141
+  Epoch  5: 5.6654
+  Epoch  6: 5.5202
+  Epoch  7: 5.3757
+  Epoch  8: 5.2296
+  Epoch  9: 5.1034
+  Epoch 10: 4.9760
+  Epoch 11: 4.8613
+  Epoch 12: 4.7449
+  Epoch 13: 4.6407
+  Epoch 14: 4.5332
+  Epoch 15: 4.4372
+  Epoch 16: 4.3271
+  Epoch 17: 4.2347
+  Epoch 18: 4.1434
+  Epoch 19: 4.0448
+  Epoch 20: 3.9516
+  Epoch 21: 3.8700
+  Epoch 22: 3.7754
+  Epoch 23: 3.6994
+  Epoch 24: 3.6117
+  Epoch 25: 3.5165
+  Epoch 26: 3.4434
+  Epoch 27: 3.3628
+  Epoch 28: 3.2874
+  Epoch 29: 3.2059
+  Epoch 30: 3.1270
+  Epoch 31: 3.0508
+  Epoch 32: 2.9829
+  Epoch 33: 2.9102
+  Epoch 34: 2.8431
+  Epoch 35: 2.7769
+  Epoch 36: 2.7073
+  Epoch 37: 2.6621
+  Epoch 38: 2.5913
+  Epoch 39: 2.5232
+  Epoch 40: 2.4696
+  Epoch 41: 2.4062
+  Epoch 42: 2.3473
+  Epoch 43: 2.3034
+  Epoch 44: 2.2540
+  Epoch 45: 2.2024
+  Epoch 46: 2.1431
+  Epoch 47: 2.0949
+  Epoch 48: 2.0569
+  Epoch 49: 2.0116
+  Epoch 50: 1.9799
