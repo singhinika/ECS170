@@ -10,6 +10,7 @@ ORL
 text_classification/
 text_generation/
 stage_4_data
+stage_5_data
 
 # C extensions
 *.so
